@@ -1,0 +1,18 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-title>
+      Favorites
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="background">
+  <ion-slides *ngIf="storageService.notices.length === 0" [options]="sliderConf">
+    <ion-slide>
+      <ion-label position="floating">No hay favoritos</ion-label>
+    </ion-slide>
+  </ion-slides>
+  <app-notices [inFavs]="true" [notices]="storageService.notices" *ngIf="storageService.notices.length > 0">
+  </app-notices>
+  
+</ion-content>

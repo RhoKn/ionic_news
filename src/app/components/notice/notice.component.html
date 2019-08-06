@@ -1,0 +1,21 @@
+<ion-card class="cards">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <span class="text-primary">{{ index + 1 }}. </span>
+        <span >{{ notice.source.name}}. </span>
+        <div class="options">
+          <ion-button fill="clear" (click)="openMenu()">
+            <ion-icon slot="icon-only" name="more"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-card-subtitle>
+      <ion-card-title class="text-title" (click)="goToNotice()">
+        {{notice.title}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-img *ngIf="notice.urlToImage" [src]="notice.urlToImage" (click)="goToNotice()"></ion-img>
+
+    <ion-card-content>
+      <p class="text-content">{{notice.description}}</p>
+    </ion-card-content>
+</ion-card>
